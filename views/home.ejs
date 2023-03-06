@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+<h1>Home</h1>
+<!-- adding content from app.js file -->
+<p><%= homeStartingContent %></p>
+
+<div>
+  <% posts.forEach(function(post){ %>
+  <div>
+    <h1><%= post.title %></h1>
+    <p>
+      <%= post.content.substring(0,100)+"..." %>
+      <!-- change the href of the anchor tag based on the post id instead of the post name. -->
+      <a href="/posts/<%= post._id %>">Read More</a>
+    </p>
+  </div>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') -%>
